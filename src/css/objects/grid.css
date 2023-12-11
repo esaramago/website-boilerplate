@@ -1,0 +1,25 @@
+.o-grid {
+  --gap: var(--sl-spacing-2x-large);
+  gap: var(--gap);
+  display: flex;
+}
+.o-grid--small {
+  --gap: var(--sl-spacing-small);
+}
+.o-grid--large {
+  --gap: var(--sl-spacing-3x-large);
+}
+.o-grid--column {
+  flex-direction: column;
+}
+
+@media (min-width: 769px) {
+  .o-grid--reverse {
+    flex-direction: row-reverse;
+  }
+}
+@media (max-width: 768px) {
+  .o-grid {
+    flex-direction: column;
+  }
+}

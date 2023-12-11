@@ -1,0 +1,22 @@
+/* Base */
+sl-button::part(base) {
+  transition: background-color .3s;
+}
+
+/* Primary */
+sl-button[variant="primary"]::part(base) {
+  background-color: var(--sl-color-primary-500);
+}
+sl-button[variant="secondary"]::part(base):hover {
+  background-color: var(--sl-color-primary-600);
+}
+
+/* Secondary */
+sl-button[variant="secondary"]::part(base) {
+  background-color: #FFF;
+  color: var(--sl-color-primary-500);
+  border: 1px solid var(--sl-color-primary-500);
+}
+sl-button[variant="secondary"]::part(base):hover {
+  background-color: var(--sl-color-primary-100);
+}
