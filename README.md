@@ -10,4 +10,4 @@
 - Includes Shoelace - https://shoelace.style
 
 ## JavaScript
-- Includes Typescript
+- It includes Typescript
