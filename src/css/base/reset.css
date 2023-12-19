@@ -2,8 +2,12 @@ html {
   height: 100%;
 }
 
+img {
+  display: block;
+}
 img,
-svg {
+svg,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -18,10 +22,15 @@ ul,
 p,
 h1,
 h2,
-h3 {
+h3,
+blockquote {
   margin: 0;
 }
 
 a {
   color: inherit;
+}
+
+blockquote {
+  font-style: italic;
 }

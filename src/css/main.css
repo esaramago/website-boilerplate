@@ -1,10 +1,10 @@
 @import url(base/shoelace-theme.css);
+@import url(base/variables.css);
 @import url(base/reset.css);
 @import url(base/structure.css);
 
 @import url(plugins/shoelace.css);
 
-@import url(objects/main.css);
 @import url(objects/container.css);
 @import url(objects/grid.css);
 
@@ -13,5 +13,6 @@
 @import url(components/footer.css);
 @import url(components/headings.css);
 
+@import url(utilities/display.css);
 @import url(utilities/text.css);
 @import url(utilities/background.css);

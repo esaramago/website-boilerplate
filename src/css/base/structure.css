@@ -3,6 +3,6 @@ body {
   margin: 0;
   font-family: var(--sl-font-sans);
   line-height: 1.4;
-  color: var(--sl-color-neutral-800);
-  fill: var(--sl-color-neutral-800);
+  color: var(--color-default);
+  fill: var(--color-default);
 }

@@ -1,0 +1,5 @@
+@media (max-width: 767px) {
+  .u-hidden-mobile {
+    display: none !important;
+  }
+}
