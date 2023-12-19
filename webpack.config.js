@@ -22,6 +22,7 @@ export default {
     filename: '[name].js',
     clean: true
   },
+  devtool: 'source-map',
   devServer: {
     static: {
       directory: OUTPUT,
