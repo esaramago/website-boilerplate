@@ -1,25 +1,30 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import 'dotenv/config'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import 'dotenv/config'
 
-const ROOT = './src'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
+const ROOT = `${__dirname}/`
+
+const SOURCE = `${ROOT}/src`
+const STATIC = `${ROOT}/public`
+const OUTPUT = `${ROOT}/dist`
 const SITE_URL = process.env.SITE_URL
-const outputPath = 'dist'
 
 export default {
-  entry: ROOT + '/main.ts',
+  entry:  `${SOURCE}/main.ts`,
   output: {
-    path: path.resolve(__dirname, outputPath),
+    path: OUTPUT,
     filename: '[name].js',
     clean: true
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: OUTPUT,
     },
     port: 3000,
     open: true,
@@ -28,9 +33,15 @@ export default {
   plugins: [
 
     new HtmlWebpackPlugin({
-      template: 'public/index.html',
+      template: `${SOURCE}/index.html`,
       filename: 'index.html',
       inject: 'body',
+    }),
+
+    new CopyWebpackPlugin({
+        patterns: [
+            { from: STATIC }
+        ]
     }),
 
     new MiniCssExtractPlugin({
