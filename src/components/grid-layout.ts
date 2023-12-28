@@ -7,7 +7,7 @@ export class GridLayout extends LitElement {
   @property() align: 'center' | 'start' | 'end'
   @property() gap: 'small' | 'large'
   @property({type: Boolean}) wrap = false
-  @property({type: Number}) min = 16
+  @property({type: String}) columnwidth = '250px'
 
   static styles = css`
     .grid-layout {
@@ -40,7 +40,7 @@ export class GridLayout extends LitElement {
 
     .wrap {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(var(--internal-min), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(var(--columnwidth), 1fr));
       grid-template-rows: min-content;
     }
 
@@ -53,7 +53,7 @@ export class GridLayout extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this.style.setProperty('--internal-min', this.min.toString())
+    this.style.setProperty('--columnwidth', this.columnwidth.toString())
   }
 
   render() {

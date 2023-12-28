@@ -23,7 +23,7 @@ export default {
     filename: '[name].js',
     clean: true
   },
-  devtool: 'source-map',
+  target: 'web',
   devServer: {
     static: {
       directory: OUTPUT,
@@ -32,6 +32,7 @@ export default {
     open: true,
     compress: true,
   },
+  devtool: 'source-map',
   plugins: [
 
     new HtmlWebpackPlugin({
