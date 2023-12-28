@@ -6,19 +6,16 @@ export class GridLayout extends LitElement {
 
   @property() align: 'center' | 'start' | 'end'
   @property() gap: 'small' | 'large'
-  @property({type: Boolean}) wrap = false
   @property({type: String}) columnwidth = '250px'
 
   static styles = css`
     .grid-layout {
       --internal-grid-layout-gap: var(--grid-layout-gap, 32px);
       --internal-gap: var(--internal-grid-layout-gap, 32px);
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--columnwidth), 1fr));
+      grid-template-rows: min-content;
       gap: var(--internal-gap);
-    }
-
-    .grid-layout > ::slotted(*) {
-      flex: 1;
     }
 
     .gap-small {
@@ -37,18 +34,6 @@ export class GridLayout extends LitElement {
     .align-end {
       align-items: end;
     }
-
-    .wrap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(var(--columnwidth), 1fr));
-      grid-template-rows: min-content;
-    }
-
-    @media (max-width: 768px) {
-      .grid-layout {
-        flex-direction: column;
-      }
-    }
   `
 
   connectedCallback() {
@@ -62,7 +47,6 @@ export class GridLayout extends LitElement {
         grid-layout
         ${this.align && `align-${this.align}`}
         ${this.gap && `gap-${this.gap}`}
-        ${this.wrap ? 'wrap' : ''}
       ">
         <slot></slot>
       </div>

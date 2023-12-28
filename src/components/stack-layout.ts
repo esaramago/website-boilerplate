@@ -8,16 +8,17 @@ export class StackLayout extends LitElement {
 
   static styles = css`
     .stack-layout {
+      --internal-stack-layout-gap: var(--stack-layout-gap, 32px);
       --internal-gap: var(--stack-layout-gap, 32px);
       gap: var(--internal-gap);
       display: flex;
       flex-direction: column;
     }
     .gap-small {
-      --internal-gap: calc(var(--internal-gap) / 2);
+      --internal-gap: calc(var(--internal-stack-layout-gap) / 2);
     }
     .gap-large {
-      --internal-gap: calc(var(--internal-gap) * 2);
+      --internal-gap: calc(var(--internal-stack-layout-gap) * 2);
     }
   `
 
@@ -28,7 +29,6 @@ export class StackLayout extends LitElement {
       </div>
     `
   }
-
 }
 
 declare global {
