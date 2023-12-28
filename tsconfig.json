@@ -3,6 +3,13 @@
     "moduleResolution": "node",
     "module": "es6",
     "target": "es6",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "paths": {
+ 		  "@/*": ["./*"],
+      "@components/*": ["./src/components/*"],
+      "@js/*": ["./src/js/*"],
+      "@css/*": ["./src/css/*"],
+      "@img/*": ["./src/img/*"],
+		}
   },
 }

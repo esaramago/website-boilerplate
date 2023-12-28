@@ -37,12 +37,25 @@
 </head>
 <body>
   <main class="o-main">
-    <div class="o-container">
-      <div class="o-grid o-grid--small o-grid--vertical">
-        <h1>Website Boilerplate</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequatur facilis officiis illum! Tempore, doloremque temporibus? Quisquam, fugiat unde quis illum reprehenderit aut, ex ipsa dolorem, a repudiandae dignissimos architecto.</p>
-      </div>
-    </div>
+    <container-layout>
+      <stack-layout>
+        <stack-layout gap="small">
+          <h1>Website Boilerplate</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequatur facilis officiis illum! Tempore, doloremque temporibus? Quisquam, fugiat unde quis illum reprehenderit aut, ex ipsa dolorem, a repudiandae dignissimos architecto.</p>
+        </stack-layout>
+        <grid-layout gap="small">
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
+          </div>
+          <div>
+            <img src="https://picsum.photos/600" alt="">
+          </div>
+          <div>
+            <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
+          </div>
+        </grid-layout>
+      </stack-layout>
+    </container-layout>
   </main>
 </body>
 </html>
