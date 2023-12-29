@@ -4,8 +4,8 @@ import {customElement, property} from 'lit/decorators.js'
 @customElement('layout-grid')
 export class LayoutGrid extends LitElement {
 
-  @property() align: 'center' | 'start' | 'end'
-  @property() gap: 'small' | 'large'
+  @property({type: String}) align: 'center' | 'start' | 'end' = 'start'
+  @property({type: String}) gap: 'small' | 'large'
   @property({type: String}) columnwidth = '250px'
 
   static styles = css`
@@ -18,6 +18,7 @@ export class LayoutGrid extends LitElement {
       grid-template-columns: repeat(auto-fit, minmax(var(--columnwidth), 1fr));
       grid-template-rows: min-content;
       gap: var(--internal-gap);
+      align-items: var(--align);
     }
 
     .gap-small {
@@ -27,27 +28,18 @@ export class LayoutGrid extends LitElement {
       gap: calc(var(--internal-gap) * 2);
     }
 
-    .align-center {
-      align-items: center;
-    }
-    .align-start {
-      align-items: start;
-    }
-    .align-end {
-      align-items: end;
-    }
   `
 
   connectedCallback() {
     super.connectedCallback()
-    this.style.setProperty('--columnwidth', this.columnwidth.toString())
+    this.style.setProperty('--columnwidth', this.columnwidth)
+    this.style.setProperty('--align', this.align)
   }
 
   render() {
     return html`
       <div class="
         grid
-        ${this.align && `align-${this.align}`}
         ${this.gap && `gap-${this.gap}`}
       ">
         <slot></slot>
