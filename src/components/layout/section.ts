@@ -7,9 +7,12 @@ export class LayoutSection extends LitElement {
   @property({type: String}) backgroundimage = null
 
   static styles = css`
+    :host {
+      --default-padding: 32px;
+    }
     .section {
       position: relative;
-      padding: var(--ds-spacing, 32px) 0;
+      padding: var(--layout-section-padding, var(--default-padding)) 0;
       background-position: center center;
       background-size: cover;
     }

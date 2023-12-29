@@ -5,13 +5,15 @@ import {customElement} from 'lit/decorators.js'
 export class LayoutContainer extends LitElement {
 
   static styles = css`
+    :host {
+      --default-gap: 32px;
+      --default-max-width: 1200px;
+    }
     .container {
-      --internal-max-width: var(--l-container-max-width, 1200px);
-      --internal-gap: var(--l-container-gap, 32px);
-      max-width: var(--internal-max-width);
+      max-width: var(--layout-container-max-width, var(--default-max-width));
       width: 100%;
-      padding-left: var(--internal-gap);
-      padding-right: var(--internal-gap);
+      padding-left: var(--layout-container-gap, var(--default-gap));
+      padding-right: var(--layout-container-gap, var(--default-gap));
       margin: auto;
       box-sizing: border-box;
     }

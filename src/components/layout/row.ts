@@ -8,9 +8,11 @@ export class RowLayout extends LitElement {
   @property({type: String}) gap: 'small' | 'large'
 
   static styles = css`
+    :host {
+      --default-gap: 32px;
+    }
     .row {
-      --internal-row-gap: var(--row-gap, 32px);
-      --internal-gap: var(--internal-row-gap, 32px);
+      --internal-gap: var(--layout-row-gap, var(--default-gap));
       display: flex;
       gap: var(--internal-gap);
     }
@@ -20,10 +22,10 @@ export class RowLayout extends LitElement {
     }
 
     .gap-small {
-      --internal-gap: calc(var(--internal-row-gap) / 2);
+      gap: calc(var(--internal-gap) / 2);
     }
     .gap-large {
-      --internal-gap: calc(var(--internal-row-gap) * 2);
+      gap: calc(var(--internal-gap) * 2);
     }
 
     .align-center {

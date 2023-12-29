@@ -9,9 +9,11 @@ export class LayoutGrid extends LitElement {
   @property({type: String}) columnwidth = '250px'
 
   static styles = css`
+    :host {
+      --default-gap: 32px;
+    }
     .grid {
-      --internal-grid-gap: var(--grid-gap, 32px);
-      --internal-gap: var(--internal-grid-gap, 32px);
+      --internal-gap: var(--layout-grid-gap, var(--default-gap));
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(var(--columnwidth), 1fr));
       grid-template-rows: min-content;
@@ -19,10 +21,10 @@ export class LayoutGrid extends LitElement {
     }
 
     .gap-small {
-      --internal-gap: calc(var(--internal-grid-gap) / 2);
+      gap: calc(var(--internal-gap) / 2);
     }
     .gap-large {
-      --internal-gap: calc(var(--internal-grid-gap) * 2);
+      gap: calc(var(--internal-gap) * 2);
     }
 
     .align-center {
