@@ -6,14 +6,14 @@ export class LayoutContainer extends LitElement {
 
   static styles = css`
     :host {
-      --default-gap: 32px;
+      --default-padding: 32px;
       --default-max-width: 1200px;
     }
     .container {
       max-width: var(--layout-container-max-width, var(--default-max-width));
       width: 100%;
-      padding-left: var(--layout-container-gap, var(--default-gap));
-      padding-right: var(--layout-container-gap, var(--default-gap));
+      padding-left: var(--layout-container-padding, var(--default-padding));
+      padding-right: var(--layout-container-padding, var(--default-padding));
       margin: auto;
       box-sizing: border-box;
     }

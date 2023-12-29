@@ -2,8 +2,11 @@
   --color-default: var(--sl-color-neutral-700);
 
   /*
-  --container-layout-gap: ;
-  --l-row-gap: ;
-  --stack-layout-gap: ;
+  --layout-section-padding: ;
+  --layout-container-max-width: ;
+  --layout-container-padding: ;
+  --layout-grid-gap: ;
+  --layout-row-gap: ;
+  --layout-stack-gap: ;
   */
 }

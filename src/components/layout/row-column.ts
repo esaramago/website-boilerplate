@@ -5,10 +5,14 @@ import {customElement, property} from 'lit/decorators.js'
 export class LayoutRowColumn extends LitElement {
 
   @property({type: Number}) column = null
+  @property() align: 'start' | 'center' | 'end' = 'start'
+  @property() justify: 'start' | 'center' | 'end' = 'start'
 
   static styles = css`
     :host {
       flex: var(--flex, 1) !important;
+      justify-self: var(--justify);
+      align-self: var(--align);
     }
   `
 
@@ -17,6 +21,8 @@ export class LayoutRowColumn extends LitElement {
 
     if (this.column) {
       this.style.setProperty('--flex', this.column)
+      this.style.setProperty('--align', this.align)
+      this.style.setProperty('--justify', this.justify)
     }
   }
 

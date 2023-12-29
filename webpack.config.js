@@ -28,6 +28,7 @@ export default {
     static: {
       directory: OUTPUT,
     },
+    watchFiles: [`${SOURCE}/**/*`],
     port: 3000,
     open: true,
     compress: true,
@@ -42,9 +43,9 @@ export default {
     }),
 
     new CopyWebpackPlugin({
-        patterns: [
-            { from: STATIC }
-        ]
+      patterns: [
+        { from: STATIC }
+      ]
     }),
 
     new MiniCssExtractPlugin({
