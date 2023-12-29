@@ -1,29 +1,29 @@
 import {LitElement, html, css} from 'lit'
 import {customElement, property} from 'lit/decorators.js'
 
-@customElement('flex-layout')
-export class FlexLayout extends LitElement {
+@customElement('layout-row')
+export class RowLayout extends LitElement {
 
   @property({type: String}) align: 'center' | 'start' | 'end'
   @property({type: String}) gap: 'small' | 'large'
 
   static styles = css`
-    .flex-layout {
-      --internal-flex-layout-gap: var(--flex-layout-gap, 32px);
-      --internal-gap: var(--internal-flex-layout-gap, 32px);
+    .row {
+      --internal-row-gap: var(--row-gap, 32px);
+      --internal-gap: var(--internal-row-gap, 32px);
       display: flex;
       gap: var(--internal-gap);
     }
 
-    .flex-layout ::slotted(*) {
+    .row ::slotted(*) {
       flex: 1;
     }
 
     .gap-small {
-      --internal-gap: calc(var(--internal-flex-layout-gap) / 2);
+      --internal-gap: calc(var(--internal-row-gap) / 2);
     }
     .gap-large {
-      --internal-gap: calc(var(--internal-flex-layout-gap) * 2);
+      --internal-gap: calc(var(--internal-row-gap) * 2);
     }
 
     .align-center {
@@ -37,7 +37,7 @@ export class FlexLayout extends LitElement {
     }
 
     @media (max-width: 768px) {
-      .flex-layout {
+      .row {
         flex-direction: column;
       }
     }
@@ -46,7 +46,7 @@ export class FlexLayout extends LitElement {
   render() {
     return html`
       <div class="
-        flex-layout
+        row
         ${this.align && `align-${this.align}`}
         ${this.gap && `gap-${this.gap}`}
       ">
@@ -59,6 +59,6 @@ export class FlexLayout extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'flex-layout': FlexLayout
+    'layout-row': RowLayout
   }
 }

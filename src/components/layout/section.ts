@@ -1,8 +1,8 @@
 import {LitElement, html, css} from 'lit'
 import {customElement, property} from 'lit/decorators.js'
 
-@customElement('section-layout')
-export class SectionLayout extends LitElement {
+@customElement('layout-section')
+export class LayoutSection extends LitElement {
 
   @property({type: String}) backgroundimage = null
 
@@ -45,6 +45,6 @@ export class SectionLayout extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'section-layout': SectionLayout
+    'layout-section': LayoutSection
   }
 }

@@ -3,11 +3,12 @@ import '@css/main.css'
 // Shoelace components https://shoelace.style/
 import '/node_modules/@shoelace-style/shoelace/dist/components/button/button.js'
 
-import '@components/section-layout'
-import '@components/container-layout'
-import '@components/grid-layout'
-import '@components/stack-layout'
-import '@components/flex-layout'
-import '@components/flex-layout-column'
+import '@components/layout/section'
+import '@components/layout/container'
+import '@components/layout/grid'
+import '@components/layout/stack'
+import '@components/layout/row'
+import '@components/layout/row-column'
 
-console.log('Testing')
+// Testing
+import '@components/my-component'

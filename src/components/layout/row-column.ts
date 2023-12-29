@@ -1,8 +1,8 @@
 import {LitElement, html, css} from 'lit'
 import {customElement, property} from 'lit/decorators.js'
 
-@customElement('flex-layout-column')
-export class FlexLayoutColumn extends LitElement {
+@customElement('layout-row-column')
+export class LayoutRowColumn extends LitElement {
 
   @property({type: Number}) column = null
 
@@ -22,11 +22,7 @@ export class FlexLayoutColumn extends LitElement {
 
   render() {
     return html`
-      <div class="
-        flex-layout-column
-      ">
-        <slot></slot>
-      </div>
+      <slot></slot>
     `
   }
 
@@ -34,6 +30,6 @@ export class FlexLayoutColumn extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'flex-layout-column': FlexLayoutColumn
+    'layout-row-column': LayoutRowColumn
   }
 }
