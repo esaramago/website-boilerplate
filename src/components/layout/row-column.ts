@@ -5,7 +5,7 @@ import {customElement, property} from 'lit/decorators.js'
 export class LayoutRowColumn extends LitElement {
 
   @property({type: Number}) column = 1
-  @property() align: 'start' | 'center' | 'end' = 'start'
+  @property({type: String}) align: 'unset' | 'center' | 'start' | 'end' = 'unset'
 
   static styles = css`
     :host {

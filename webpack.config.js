@@ -29,7 +29,6 @@ export default {
       directory: OUTPUT,
     },
     watchFiles: [`${SOURCE}/**/*`],
-    port: 3000,
     open: true,
     compress: true,
   },

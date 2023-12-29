@@ -4,7 +4,7 @@ import {customElement, property} from 'lit/decorators.js'
 @customElement('layout-row')
 export class RowLayout extends LitElement {
 
-  @property({type: String}) align: 'center' | 'start' | 'end' = 'start'
+  @property({type: String}) align: 'unset' | 'center' | 'start' | 'end' = 'unset'
   @property({type: String}) justify: 'unset' | 'space-between' = 'unset'
   @property({type: String}) gap: 'small' | 'large'
 
