@@ -1,12 +1,12 @@
 import {LitElement, html, css} from 'lit'
-import {customElement, property} from 'lit/decorators.js'
+import {customElement} from 'lit/decorators.js'
 
 @customElement('container-layout')
-export class Container extends LitElement {
+export class ContainerLayout extends LitElement {
 
   static styles = css`
     .container {
-      --internal-max-width: var(--container-layout-max-width, 1400px);
+      --internal-max-width: var(--container-layout-max-width, 1200px);
       --internal-gap: var(--container-layout-gap, 32px);
       max-width: var(--internal-max-width);
       width: 100%;
@@ -23,5 +23,11 @@ export class Container extends LitElement {
         <slot></slot>
       </div>
     `
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'container-layout': ContainerLayout
   }
 }

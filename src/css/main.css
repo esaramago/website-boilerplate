@@ -5,8 +5,6 @@
 
 @import url(plugins/shoelace.css);
 
-@import url(objects/main.css);
-
 @import url(components/header.css);
 @import url(components/navigation.css);
 @import url(components/footer.css);

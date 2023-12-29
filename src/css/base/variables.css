@@ -2,9 +2,8 @@
   --color-default: var(--sl-color-neutral-700);
 
   /*
-  --container-layout-max-width: ;
   --container-layout-gap: ;
-  --grid-layout-gap: ;
-  --stack-container-gap: ;
+  --flex-layout-gap: ;
+  --stack-layout-gap: ;
   */
 }

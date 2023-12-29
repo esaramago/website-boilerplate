@@ -16,7 +16,7 @@ export class FlexLayoutColumn extends LitElement {
     super.connectedCallback();
 
     if (this.column) {
-      this.style.setProperty('--flex', this.column);
+      this.style.setProperty('--flex', this.column)
     }
   }
 
