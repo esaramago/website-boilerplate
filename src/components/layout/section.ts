@@ -5,6 +5,7 @@ import {customElement, property} from 'lit/decorators.js'
 export class LayoutSection extends LitElement {
 
   @property({type: String}) backgroundimage = null
+  @property({type: String}) backgroundcolor = null
 
   static styles = css`
     :host {
@@ -35,7 +36,10 @@ export class LayoutSection extends LitElement {
     return html`
       <section
         class="section ${this.backgroundimage ? 'dark-mode' : ''}"
-        style="${this.backgroundimage ? `background-image: url(${this.backgroundimage})` : ''}"
+        style="
+          ${this.backgroundimage ? `background-image: url(${this.backgroundimage})` : ''}
+          ${this.backgroundcolor ? `background-color: ${this.backgroundcolor}` : ''}
+        "
       >
         <span aria-hidden="true" class="image"></span>
         <div class="slot">

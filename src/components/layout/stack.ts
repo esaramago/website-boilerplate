@@ -8,7 +8,7 @@ export class LayoutStack extends LitElement {
 
   static styles = css`
     :host {
-      --default-gap: 32px;
+      --default-gap: 16px;
     }
     .stack {
       --internal-gap: var(--layout-stack-gap, var(--default-gap));
