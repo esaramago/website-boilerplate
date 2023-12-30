@@ -1,12 +1,15 @@
 import {LitElement, html, css} from 'lit'
-import {customElement, property} from 'lit/decorators.js'
+import {customElement, property, state} from 'lit/decorators.js'
 
 @customElement('layout-row')
 export class RowLayout extends LitElement {
 
-  @property({type: String}) align: 'unset' | 'center' | 'start' | 'end' = 'unset'
-  @property({type: String}) justify: 'unset' | 'space-between' = 'unset'
-  @property({type: String}) gap: 'small' | 'large'
+  @property() align: 'unset' | 'center' | 'start' | 'end' = 'unset'
+  @property() justify: 'unset' | 'space-between' = 'unset'
+  @property() gap: 'small' | 'large'
+
+  @property() columns?: string // example: '[2, 4, 200px]'
+
 
   static styles = css`
     :host {
@@ -20,9 +23,9 @@ export class RowLayout extends LitElement {
       align-items: var(--align);
       justify-content: var(--justify);
     }
-
-    .row ::slotted(*) {
-      flex: var(--flex);
+    .has-defined-columns {
+      display: grid;
+      grid-template-columns: var(--gridcolumns);
     }
 
     .gap-small {
@@ -34,22 +37,46 @@ export class RowLayout extends LitElement {
 
     @media (max-width: 768px) {
       .row {
+        display: flex;
         flex-direction: column;
       }
     }
   `
 
+  @state() hasDefinedColumns: boolean = false
+
+  private _getGridColumns = () => {
+
+    if (!this.columns) return null
+
+    const columnsArray = this.columns.split(',') // array of columns
+
+    let columns = ''
+    columnsArray.forEach(col => {
+      col = col.replaceAll(' ', '') // trim whitespaces
+      const isNumber = !isNaN(Number(col))
+      columns += isNumber ? `${col}fr ` : `${col} `
+    })
+
+    return columns
+  }
+
   connectedCallback() {
     super.connectedCallback();
     this.style.setProperty('--align', this.align)
     this.style.setProperty('--justify', this.justify)
-    this.style.setProperty('--flex', this.justify === 'unset' ? '1' : 'none')
+
+    if (this.columns) {
+      this.style.setProperty('--gridcolumns', this._getGridColumns())
+      this.hasDefinedColumns = true
+    }
   }
 
   render() {
     return html`
       <div class="
         row
+        ${this.hasDefinedColumns ? 'has-defined-columns' : ''}
         ${this.gap && `gap-${this.gap}`}
       ">
         <slot></slot>

@@ -43,12 +43,8 @@
           <layout-stack gap="small">
             <h1>Website Boilerplate</h1>
             <layout-row>
-              <layout-row-column>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-              </layout-row-column>
-              <layout-row-column>
-                <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-              </layout-row-column>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
+              <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
             </layout-row>
           </layout-stack>
         </layout-container>
@@ -59,30 +55,16 @@
             <h2>Website Boilerplate</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequatur facilis officiis illum! Tempore, doloremque temporibus? Quisquam, fugiat unde quis illum reprehenderit aut, ex ipsa dolorem, a repudiandae dignissimos architecto.</p>
           </layout-stack>
-          <layout-row>
-            <layout-row-column column="2" align="center">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-            </layout-row-column>
-            <layout-row-column column="1">
-              <p>Distinctio voluptate amet aut delectus unde! Fuga, optio! Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-            </layout-row-column>
-            <layout-row-column column="2" align="end">
-              <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-            </layout-row-column>
+          <layout-row columns="2, 1, 2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
+            <p>Distinctio voluptate amet aut delectus unde! Fuga, optio! Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
+            <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
           </layout-row>
-          <layout-row>
-            <layout-row-column column="55">
-              <img src="https://picsum.photos/700" alt="">
-            </layout-row-column>
-            <layout-row-column column="16">
-              <img src="https://picsum.photos/500" alt="">
-            </layout-row-column>
-            <layout-row-column column="16">
-              <img src="https://picsum.photos/500" alt="">
-            </layout-row-column>
-            <layout-row-column column="16">
-              <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
-            </layout-row-column>
+          <layout-row columns="55, 16, 16, 16">
+            <img src="https://picsum.photos/700/300" alt="">
+            <img src="https://picsum.photos/500" alt="">
+            <img src="https://picsum.photos/500" alt="">
+            <p>Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
           </layout-row>
           <layout-grid gap="large">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti iure quasi. Ducimus officiis nulla a velit, illo recusandae optio delectus natus quas praesentium eius reiciendis ex aliquam quod mollitia!</p>
@@ -120,6 +102,20 @@
             <img src="https://picsum.photos/70" alt="">
           </layout-stack>
         </layout-stack>
+      </layout-container>
+
+      <layout-container size="small">
+        <h2>Layout Container with maxwidth of 900px</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum libero commodi reprehenderit at ea magnam distinctio placeat cum voluptate atque. Labore pariatur accusantium sunt fugiat sit optio veniam ratione error.</p>
+      </layout-container>
+
+      <layout-container>
+        <h2>Layout Row with defined columns of [4, 200px, 4]</h2>
+        <layout-row columns="4, 200px, 4">
+          <div>sdcsdcsddcsndbcsnbdc db sndb csndbc sdncb d</div>
+          <div>sdcsdcsddcsndbcsnbdc db sndb csndbc sdncb d</div>
+          <div>sdcsdcsddcsndbcsnbdc db sndb csndbc sdncb d</div>
+        </layout-row>
       </layout-container>
     </layout-stack>
   </main>
