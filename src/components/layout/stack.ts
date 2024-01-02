@@ -11,7 +11,7 @@ export class LayoutStack extends LitElement {
   static styles = css`
     :host {
       --default-gap: 16px;
-      text-align: left; // prevent align-items from aligning right or center
+      text-align: inherit; // prevent align-items from aligning right or center
     }
     .stack {
       --internal-gap: var(--layout-stack-gap, var(--default-gap));

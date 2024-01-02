@@ -14,7 +14,7 @@ export class RowLayout extends LitElement {
   static styles = css`
     :host {
       --default-gap: 32px;
-      text-align: left;
+      text-align: inherit;
     }
     .row {
       --internal-gap: var(--layout-row-gap, var(--default-gap));
